@@ -1,0 +1,526 @@
+\documentclass[a4paper, 7pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{tikz}
+\geometry{top = 2cm, bottom = 2cm, left = 2cm, right = 2cm}
+\title{Math Assignment}
+\author{MTH1098\_01E\\ Zhang Yancheng, 11537668}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\noindent\textbf{Solutions:}
+
+\subsection*{1.}
+Proof: \\
+$\forall \epsilon > 0$, assume $0 < |x - 2| < \delta$, set $f(x) = 4x - 3$ then:
+\[
+| f(x) - 5| = |4x - 8| = 4|x - 2| < 4\delta
+\]
+
+Choose $\delta = \frac{\epsilon}{4}$. This implies:
+\[
+4|x - 2| < \epsilon
+\]
+
+That is:
+\[
+|x - 2| < \frac{\epsilon}{4}
+\]
+
+Which is equivalent to:
+\[
+|x - 2| < \epsilon
+\]
+
+Therefore, $\forall \epsilon > 0$, we choose $\delta = \frac{\epsilon}{4}$, which satisfies the condition that if $0 < |x - 2| < \delta$, then $|f(x) - 5| < \epsilon$. This proves that $\lim_{x \to 2} (4x-3) = 5$.
+
+\subsection*{2.}
+
+\begin{itemize}
+    \item (a) The domain of $g(x)$ is  \{$x: x \neq 1$\}.
+    \item (b) $\lim\limits_{x \to 1} g(x) = 3\cdot x^2 + 2\cdot x = 5$.
+    \item (c) $f(x)$ is continuous at $x = 1$ because the limit exists and equals the function value.
+\end{itemize}
+
+\subsection*{3.}
+
+\begin{itemize}
+    \item (a) 
+    We know that the sine function is bounded between -1 and 1 for all real numbers. Therefore:
+    \[
+    -1 \leq \sin\left(\frac{2}{x^2}\right) \leq 1
+    \]
+    
+    Multiply by \( x^2 \):
+    \[
+    -x^2 \leq x^2 \sin\left(\frac{2}{x^2}\right) \leq x^2
+    \]
+    
+    Apply the Squeeze Theorem:
+    \[
+    \lim_{x \to 0} -x^2 = 0
+    \]
+    \[
+    \lim_{x \to 0} x^2 = 0
+    \]
+    
+    Therefore, we can conclude:
+    \[
+    \lim_{x \to 0} x^2 \sin\left(\frac{2}{x^2}\right) = 0
+    \]
+    \item (b)
+    Transfer the question to:
+    \[
+    \lim\limits_{x \to \infty} \frac{(\sqrt{x^2 + 2x} - \sqrt{x^2 - 2x})(\sqrt{x^2 + 2x} + \sqrt{x^2 - 2x})}{\sqrt{x^2 + 2x} + \sqrt{x^2 - 2x}}
+    \]
+    This can be simplified to:
+    \[
+    \lim\limits_{x \to \infty} \frac{(x^2 + 2x) - (x^2 - 2x)}{\sqrt{x^2 + 2x} + \sqrt{x^2 - 2x}}
+    \]
+    \[ 
+    = \lim_{x \to \infty} \frac{4x}{\sqrt{x^2 + 2x} + \sqrt{x^2 - 2x}}
+    \]
+    \[
+    = \lim_{x \to \infty} \frac{4x}{x \left( \sqrt{1 + \frac{2}{x}} + \sqrt{1 - \frac{2}{x}} \right)}
+    \]
+    \[
+    = \lim_{x \to \infty} \frac{4}{\sqrt{1 + \frac{2}{x}} + \sqrt{1 - \frac{2}{x}}}
+    \]
+    As x approaches infinity, $\frac{2}{x}$ approaches 0. That is :
+    \[
+    \frac{4}{\sqrt{1 + 0} + \sqrt{1 - 0}} 
+    \]
+    \[
+    = \frac{4}{1 + 1} 
+    \] 
+    \[ 
+    = 2 
+    \]
+
+    So, the limit is: \[ \lim_{x \to \infty} \left( \sqrt{x^2 + 2x} - \sqrt{x^2 - 2x} \right) = 2 \]
+    \item (c)
+    As \( t \) approaches infinity, \( \frac{1}{t} \) approaches 0, so:
+
+    The Nominator: 
+    \[
+    1 - \frac{t}{t+1} = 1 - \frac{t}{t(1 + \frac{1}{t})} = 1 - \frac{1}{1 + \frac{1}{t}} = 1 - \frac{1}{1 + 0} = 1 - 1 = 0
+    \]
+
+    The Denominator: 
+    \[
+    1 - \sqrt{\frac{t}{t+1}} = 1 - \sqrt{\frac{t}{t(1 + \frac{1}{t})}} = 1 - \sqrt{\frac{1}{1 + \frac{1}{t}}} = 1 - \sqrt{\frac{1}{1 + 0}} = 1 - \sqrt{1} = 1 - 1 = 0
+    \]
+
+    Giving the indeterminate form: 
+    \[
+    \lim_{t \to \infty} \frac{\left(1 - \frac{t}{t+1}\right)} {\left(1 - \sqrt{\frac{t}{t+1}}\right)} = \frac{0}{0}
+    \]
+
+    Clearly, applying L'Hôpital's rule:
+    \[
+    \lim_{t \to \infty} \frac{\frac{d}{dt} \left(1 - \frac{t}{t+1}\right)}{\frac{d}{dt} \left(1 - \sqrt{\frac{t}{t+1}}\right)}
+    \]
+
+    Differentiate the Numerator: 
+    \[
+    \frac{d}{dt} \left(1 - \frac{t}{t+1}\right) = \frac{d}{dt} \left(\frac{t+1 - t}{t+1}\right) = \frac{d}{dt} \left(\frac{1}{t+1}\right) = -\frac{1}{(t+1)^2}
+    \]
+
+    Differentiate the Denominator: 
+    \[
+    \frac{d}{dt} \left(1 - \sqrt{\frac{t}{t+1}}\right) = \frac{d}{dt} \left(\sqrt{\frac{t}{t+1}}\right)
+    \]
+    Using the chain rule: 
+    \[
+    \frac{d}{dt} \left(\sqrt{\frac{t}{t+1}}\right) = \frac{1}{2\sqrt{\frac{t}{t+1}}} \cdot \frac{d}{dt} \left(\frac{t}{t+1}\right)
+    \]
+    \[
+    \frac{d}{dt} \left(\frac{t}{t+1}\right)  = \frac{(t+1) \cdot 1 - t \cdot 1}{(t+1)^2} = \frac{1}{(t+1)^2}
+    \]
+    So: 
+    \[
+    \frac{d}{dt} \left(\sqrt{\frac{t}{t+1}}\right) = \frac{1}{2\sqrt{\frac{t}{t+1}}} \cdot \frac{1}{(t+1)^2}
+    \]
+
+    Combine the Results: 
+    \[
+    \lim_{t \to \infty} \frac{1-\frac{1}{t + 1}}{1-\sqrt\frac{1}{t+1}} =  \lim_{t \to \infty} \frac{-\frac{1}{(t+1)^2}}{\frac{1}{2\sqrt{\frac{t}{t+1}}} \cdot \frac{1}{(t+1)^2}} =  \lim_{t \to \infty} - 2\sqrt{\frac{t}{t+1}} =  \lim_{t \to \infty} -2\sqrt{\frac{1}{1+\frac{1}{t}}} = -2
+    \]
+    Therefore, the limit is 
+    \[
+    -2
+    \]
+    \item (d)
+    
+    Calculate $(\sin\left(\frac{3\pi}{4}\right)) and (cos\left(\frac{3\pi}{4}\right))$:
+    \[
+    \sin\left(\frac{3\pi}{4}\right) = \frac{\sqrt{2}}{2}, \quad \cos\left(\frac{3\pi}{4}\right) = -\frac{\sqrt{2}}{2}
+    \]
+    Thus,
+    \[
+    \sin\left(\frac{3\pi}{4}\right) + \cos\left(\frac{3\pi}{4}\right) = \frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2} = 0.
+    \]
+    
+    Calculate $(\cos(2x)) at ( x = \frac{3\pi}{4} )$:
+    \[
+    \cos(2x) = \cos\left(2 \cdot \frac{3\pi}{4}\right) = \cos\left(\frac{3\pi}{2}\right) = 0.
+    \]
+    
+    We have an indeterminate form \( \frac{0}{0} \). 
+
+    Thus, apply L'Hôpital's Rule:
+    \[
+    \lim_{x \to \frac{3\pi}{4}} \frac{\cos x - \sin x}{-2\sin(2x)}.
+    \]
+
+    Evaluate at \( x = \frac{3\pi}{4} \):
+    \[
+    \cos\left(\frac{3\pi}{4}\right) - \sin\left(\frac{3\pi}{4}\right) = -\frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2} = -\sqrt{2}
+    \]
+    \[ 
+    \sin(2x) = \sin\left(\frac{3\pi}{2}\right) = -1 
+    \]
+    
+    Thus:
+
+    \[
+    \lim_{x \to \frac{3\pi}{4}} \frac{-\sqrt{2}}{-2(-1)} = \frac{-\sqrt{2}}{2} = \frac{\sqrt{2}}{2}.
+    \]    
+    Therefore, the limit is     
+    \[
+    \frac{\sqrt{2}}{2}.
+    \]    
+    \item (e)
+    As \(x \to 1\):
+
+    The numerator: \(x \ln x \to 1 \cdot \ln(1) = 0\).
+
+    The denominator: \(x^3 - 1 \to 1^3 - 1 = 0\).
+    
+    This gives us the indeterminate form 
+    \[
+    \frac{0}{0}.
+    \]
+    
+    Thus, apply L'Hôpital's Rule
+    \[
+    \lim_{x \to 1} \frac{x \ln x}{x^3 - 1} = \frac{\frac{d}{dx}(x \ln x) = \ln x + 1 \quad,}{\frac{d}{dx}(x^3 - 1) = 3x^2}=\lim_{x \to 1} \frac{\ln x + 1}{3x^2}.
+    \]
+    Now, as \(x \to 1\):
+
+    The numerator 
+    \[
+    \ln(1) + 1 \to 0 + 1 = 1.
+    \]
+
+    The denominator 
+    \[
+    3(1^2) \to 3.
+    \]
+    
+    Thus, we have:
+    \[
+    \lim_{x \to 1} \frac{\ln x + 1}{3x^2} = \frac{1}{3}.
+    \]
+    Therefore, the limit is 
+    \[
+    \frac{1}{3}
+    \]
+\end{itemize}
+
+\subsection*{4.}
+\begin{itemize}
+    \item (a)
+    $\forall x \in (0,4)$,
+    \[
+    \because \frac{d}{dx} (\sqrt[3]{2x} + 3x - 4) > 0 \implies f(x) \nearrow,
+    \]
+    and 
+    \[
+    \left\{
+    \begin{aligned}
+    f(0) = -4 < 0 \\
+    f(4) = 10 > 0
+    \end{aligned}
+    \right.
+    \]
+
+    $\therefore $
+    \[
+    \exists x \in (0,4) \mathrm{, that} \enspace f(x) = 0
+    \]
+     
+    \item (b)
+    The fuction $f(x)$ is continuous on [0,4] as all its terms are differentiable.\\
+    Thus we calculate $f(0)$ and $f(4)$:
+    \[
+    \left\{
+    \begin{aligned}
+    f(0) = -4 \\
+    f(4) = 10 
+    \end{aligned}
+    \right.
+    \]
+
+    Accroding to MVT, $\exists x \in (0,4)$, such that
+    \[
+    f'(x)= \frac{f(4) - f(0)}{4 - 0} = \frac{7}{2}
+    \]
+    $\therefore$
+    There exist $c \in (0,4)$ such that $f'(c) = 3 \frac{1}{2}$
+
+\end{itemize}
+\subsection*{5.}
+
+Let 
+\[
+f(x) = 
+\begin{cases} 
+11 + c^2 x & \text{if } x < 2 \\ 
+1 - 6c x & \text{if } x \geq 2 
+\end{cases}
+\]
+
+\begin{itemize}
+    \item \textbf{(a)} Find \( \lim_{x \to 2^-} f(x) \):
+    \[
+    \lim_{x \to 2^-} f(x) = 11 + 2c^2
+    \]
+    
+    \item \textbf{(b)} Find \( \lim_{x \to 2^+} f(x) \):
+    \[
+    \lim_{x \to 2^+} f(x) = 1 - 12c
+    \]
+\end{itemize}
+
+To ensure \( f(x) \) is continuous at \( x = 2 \), set the limits equal:
+\[
+11 + 2c^2 = 1 - 12c
+\]
+
+Thus:
+\[
+c = -1 \quad \text{or} \quad c = -5
+\]
+
+\subsection*{6.}
+\begin {itemize}
+    \item (a)
+    Rewrite the function:
+    \[
+    f(x) = (4x + 3)^{1/2}
+    \]
+    Using the Chain Rule:
+    \[
+    f'(x) = \frac{1}{2}(4x + 3)^{-1/2} \cdot \frac{d}{dx}(4x + 3)
+    = \frac{1}{2}(4x + 3)^{-1/2} \cdot 4 = \frac{2}{\sqrt{4x + 3}}
+    \]
+    \item (b)
+
+    The definition of the derivative is:
+    \[
+    f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}
+    \]
+    Calculating \( f(x + h) \):
+    \[
+    f(x + h) = \sqrt{4(x + h) + 3} = \sqrt{4x + 4h + 3}
+    \]
+    Setting up the limit:
+    \[
+    f'(x) = \lim_{h \to 0} \frac{\sqrt{4x + 4h + 3} - \sqrt{4x + 3}}{h} = \lim_{h \to 0} \frac{(4x + 4h + 3) - (4x + 3)}{h \left(\sqrt{4x + 4h + 3} + \sqrt{4x + 3}\right)}
+    \]
+
+    \[
+    = \lim_{h \to 0} \frac{4h}{h \left(\sqrt{4x + 4h + 3} + \sqrt{4x + 3}\right)} = \lim_{h \to 0} \frac{4}{\sqrt{4x + 4h + 3} + \sqrt{4x + 3}} = \frac{4}{2\sqrt{4x + 3}} = \frac{2}{\sqrt{4x + 3}}
+    \]
+
+    Therefore:
+    \[
+    f'(x) = \frac{2}{\sqrt{4x + 3}}
+    \]
+\end{itemize}
+
+\subsection*{7.}
+\begin{itemize}
+    \item (a)
+    \[
+    (\frac{fg}{h})' = \frac{f'g'\cdot h-fg\cdot h'}{h^2}
+    \]
+    \item (b)
+    Acoording to (a), we can calculate:
+    \[
+    (\frac{x^2 \sin x}{e^x})' = \frac{(2x\sin x + x^2\cos x)e^x-(x^2 \sin x \cdot e^x)}{e^{2x}} = \frac{2x\sin x +x^2\cos x- x^2\sin x}{e^x}
+    \]
+\end{itemize}
+\subsection*{8.}
+\begin{itemize}
+    \item (a)
+    \[
+    \frac{d}{dx} \sqrt{5^x} = \frac{d}{dx} 5^{\frac{x}{2}} = \frac{1}{2} 5^{\frac{x}{2}} \ln(5) = \frac{\ln(5)}{2}\cdot 5^\frac{x}{2}
+    \]
+    \item (b)
+    \[
+    \frac{d}{dx} e^{\tan(2x)} \ln(\sin x) = (e^{\tan(2x)} \sec^2 2x \cdot 2) (\ln \sin x) + (e^{\tan(2x)} \cdot \frac{1}{sinx} \cdot \cos x)
+    \]
+    \[
+    = 2e^{tan(2x)} sec^2 (2x) + e^{tan(2x)}\cot x 
+    \]
+    \item (c)
+    Differentiate the euqation:
+    \[
+    \frac{d}{dx} (xy^2) + \frac{d}{dx} (y\ln x) + \frac{d}{dx} (e^x) = 0
+    \]
+    Simplify each element:
+    \[
+    \frac{d}{dx}(xy^2) = x \cdot \frac{d}{dx}(y^2) + y^2 \cdot \frac{d}{dx}(x) = x(2y \frac{dy}{dx}) + y^2
+    \]
+    \[
+    \frac{d}{dx}(y \ln x) = \frac{dy}{dx} \ln x + y \cdot \frac{1}{x}
+    \]
+    \[
+    \frac{d}{dx}(e^x) = e^x
+    \]
+    Thus
+    \[
+    x(2y \frac{dy}{dx}) + y^2 + \left(\frac{dy}{dx} \ln x + \frac{y}{x}\right) + e^x = 0
+    \]
+    This equals to:
+    \[
+    \frac{dy}{dx}(2xy + \ln x) = -\left(y^2 + \frac{y}{x} + e^x\right)
+    \]
+    Therefore:
+    \[
+    \frac{dy}{dx} = \frac{-(y^2 + \frac{y}{x} + e^x)}{2xy + \ln x}
+    \]
+    \item (d)
+    The derivative of \( \sin^{-1}(u) \) is given by:
+
+    \[
+    \frac{d}{du}[\sin^{-1}(u)] = \frac{1}{\sqrt{1 - u^2}}
+    \]
+
+    Here, \( u = 4x \), so we apply the chain rule:
+
+    \[
+    \frac{dy}{dx} = \frac{d}{du}[\sin^{-1}(u)] \cdot \frac{du}{dx}
+    \]
+
+    Next, we find \( \frac{du}{dx} \):
+
+    \[
+    u = 4x \implies \frac{du}{dx} = 4
+    \]
+
+    Substituting back into the derivative, we have:
+
+\[
+\frac{dy}{dx} = \frac{1}{\sqrt{1 - (4x)^2}} \cdot 4
+\]
+
+Thus, the derivative is:
+\[
+\frac{dy}{dx} = \frac{4}{\sqrt{1 - 16x^2}}
+\]
+\end{itemize}
+\subsection*{9.}
+Given:
+\begin{itemize}
+    \item Ladder length (\(L\)) = 17 m
+    \item Rate at which the foot is pulled away (\(\frac{dx}{dt}\)) = 0.8 m/s
+    \item Distance from the wall (\(x\)) = 8 m
+\end{itemize}
+
+Using the Pythagorean theorem:
+
+\[
+x^2 + y^2 = L^2 \implies y^2 = L^2 - x^2
+\]
+
+Substituting \(x = 8\):
+
+\[
+y^2 = 17^2 - 8^2 \implies y = 15 \, \text{m}
+\]
+
+Differentiating:
+
+\[
+x \frac{dx}{dt} + y \frac{dy}{dt} = 0 \implies \frac{dy}{dt} = -\frac{x}{y} \frac{dx}{dt}
+\]
+
+Substituting values:
+
+\[
+\frac{dy}{dt} = -\frac{8}{15} \cdot 0.8 = -\frac{6.4}{15} \approx -0.427 \, \text{m/s}
+\]
+
+Conclusion: The top of the ladder slides down at approximately \(0.427 \, \text{m/s}\).
+\subsection*{10.}
+
+\begin{itemize}
+    \item \textbf{Domain:} \( x \in (-\infty, -4) \cup (-4, 4) \cup (4, \infty) \)
+    \item \textbf{Intercepts:}
+        \begin{itemize}
+            \item \( x \)-intercept: \( (0, 0) \)
+            \item \( y \)-intercept: \( (0, 0) \)
+        \end{itemize}
+    \item \textbf{Asymptotes:}
+        \begin{itemize}
+            \item Vertical: \( x = -4, \, 4 \)
+            \item Horizontal: \( y = 0 \)
+        \end{itemize}
+    \item \textbf{Local Extrema:} None in the domain.
+\end{itemize}
+
+\textbf{Graph:}
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+    \draw[->] (-10, 0) -- (10, 0) node[right] {$x$};
+    \draw[->] (0, -2) -- (0, 3) node[above] {$y$};
+    \draw[thick, domain=-10:10, samples=100] plot (\x, {(\x)/((\x)^2 - 16)}) node[right] {};
+    \draw[dashed] (-4, -2) -- (-4, 3);
+    \draw[dashed] (4, -2) -- (4, 3);
+    \draw[dashed] (-10, 0) -- (10, 0);
+\end{tikzpicture}
+\end{center}
+
+\subsection*{11.}
+A piece of cardboard measures 2 m by 3 m. A square with side length \( x \) is cut from each corner. The volume \( V \) of the resulting box is given by:
+
+\[
+V = x(2 - 2x)(3 - 2x) = 6x - 6x^2
+\]
+
+To find the maximum volume, take the derivative:
+
+\[
+\frac{dV}{dx} = 6 - 12x
+\]
+
+Setting the derivative to zero gives:
+
+\[
+12x = 6 \implies x = \frac{1}{2}
+\]
+
+The dimensions of the box become:
+
+- Length: \( 3 - 2\left(\frac{1}{2}\right) = 2 \, \text{m} \)
+- Width: \( 2 - 2\left(\frac{1}{2}\right) = 1 \, \text{m} \)
+- Height: \( x = \frac{1}{2} \, \text{m} \)
+
+The maximum volume is calculated as:
+
+\[
+V = \left(\frac{1}{2}\right)(2)(1) = 1 \, \text{m}^3
+\]
+
+Thus, the dimensions of the box are \( 2 \, \text{m} \times 1 \, \text{m} \times 0.5 \, \text{m} \) and the maximum possible volume is \( 1 \, \text{m}^3 \).\\ \\
+
+\section*{}
+After all, I would like to express my gratitude for your guidance throughout this course.
+I used LaTeX to format my assignment, which greatly helped me in presenting the mathematical concepts clearly.
+\end{document}
