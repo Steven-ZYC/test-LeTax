@@ -363,10 +363,13 @@ c = -1 \quad \text{or} \quad c = -5
     \]
     \item (b)
     \[
-    \frac{d}{dx} e^{\tan(2x)} \ln(\sin x) = (e^{\tan(2x)} \sec^2 2x \cdot 2) (\ln \sin x) + (e^{\tan(2x)} \cdot \frac{1}{sinx} \cdot \cos x)
+    \frac{d}{dx} e^{\tan(2x)} \ln(\sin x) = (e^{\tan(2x)} \sec^2 2x \cdot 2) \cdot (\ln (\sin x)) + (e^{\tan(2x)}) \cdot (\frac{1}{\sin x} \cdot \cos x)
     \]
     \[
-    = 2e^{tan(2x)} sec^2 (2x) + e^{tan(2x)}\cot x 
+    = (2e^{\tan(2x)} sec^2 (2x)) \cdot (\ln(\sin x)) + e^{\tan(2x)}\cot x 
+    \]
+    \[
+    = e^{\tan(2x)}(2sec^2 (2x) \ln(\sin x) + \cot x)
     \]
     \item (c)
     Differentiate the euqation:
@@ -491,34 +494,51 @@ Conclusion: The top of the ladder slides down at approximately \(0.427 \, \text{
 A piece of cardboard measures 2 m by 3 m. A square with side length \( x \) is cut from each corner. The volume \( V \) of the resulting box is given by:
 
 \[
-V = x(2 - 2x)(3 - 2x) = 6x - 6x^2
+V = x(2 - 2x)(3 - 2x) = 6x - 10x^2 + 4x^3
 \]
 
 To find the maximum volume, take the derivative:
 
 \[
-\frac{dV}{dx} = 6 - 12x
+\frac{dV}{dx} = 6 - 20x +12x^2
 \]
 
 Setting the derivative to zero gives:
 
 \[
-12x = 6 \implies x = \frac{1}{2}
+12x^2 -20x + 6 = 0 \implies x = \frac{1}{2}
+\]
+
+Using the quadratic formula:
+\[
+x = \frac{20 \pm \sqrt{(-20)^2 - 4 \cdot 12 \cdot 6}}{2 \cdot 12} = \frac{20 \pm \sqrt{400 - 288}}{24} = \frac{20 \pm \sqrt{112}}{24} = \frac{20 \pm 4\sqrt{7}}{24} = \frac{5 \pm \sqrt{7}}{6}
+\]
+
+The valid solution for \( x \) must be:
+\[
+x = \frac{5 - \sqrt{7}}{6} \quad \text{(valid)}
+\]
+
+Calculating the approximate value:
+\[
+\sqrt{7} \approx 2.64575 \implies x \approx \frac{5 - 2.64575}{6} \approx 0.3923
 \]
 
 The dimensions of the box become:
-
-- Length: \( 3 - 2\left(\frac{1}{2}\right) = 2 \, \text{m} \)
-- Width: \( 2 - 2\left(\frac{1}{2}\right) = 1 \, \text{m} \)
-- Height: \( x = \frac{1}{2} \, \text{m} \)
+\begin{align*}
+    \text{Length} &\approx 3 - 2(0.3923) \approx 2.2154 \, \text{m} \\
+    \text{Width} &\approx 2 - 2(0.3923) \approx 1.2154 \, \text{m} \\
+    \text{Height} &\approx 0.3923 \, \text{m}
+\end{align*}
 
 The maximum volume is calculated as:
 
 \[
-V = \left(\frac{1}{2}\right)(2)(1) = 1 \, \text{m}^3
-\]
+V \approx 4(0.0605) - 10(0.154) + 2.3538 \approx 0.242 - 1.54 + 2.3538 \approx 1.06 \, \text{m}^3
+\]\\
 
-Thus, the dimensions of the box are \( 2 \, \text{m} \times 1 \, \text{m} \times 0.5 \, \text{m} \) and the maximum possible volume is \( 1 \, \text{m}^3 \).\\ \\
+
+Thus, the dimensions of the box are \( 2 \, \text{m} \times 1 \, \text{m} \times 0.5 \, \text{m} \) and the maximum possible volume is about \( 1.06 \, \text{m}^3 \).\\ \\
 
 \section*{}
 After all, I would like to express my gratitude for your guidance throughout this course.
